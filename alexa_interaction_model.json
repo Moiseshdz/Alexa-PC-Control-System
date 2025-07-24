@@ -1,0 +1,117 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "control pc",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "ayuda",
+            "que puedes hacer",
+            "como funciona",
+            "qué comandos tienes"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": [
+            "para",
+            "detente",
+            "termina"
+          ]
+        },
+        {
+          "name": "PowerOnIntent",
+          "slots": [],
+          "samples": [
+            "enciende mi computadora",
+            "enciende la pc",
+            "prende mi computadora",
+            "enciende mi pc",
+            "encender computadora",
+            "encender pc",
+            "prender la computadora",
+            "prender el pc",
+            "arranca mi pc",
+            "arranca la computadora",
+            "inicia mi computadora",
+            "inicia la pc",
+            "activa mi pc",
+            "activa mi computadora"
+          ]
+        },
+        {
+          "name": "PowerOffIntent",
+          "slots": [],
+          "samples": [
+            "apaga mi computadora",
+            "apaga la pc",
+            "apaga mi pc",
+            "cierra mi computadora",
+            "apagar computadora",
+            "apagar pc",
+            "cerrar la computadora",
+            "cerrar el pc",
+            "desactiva mi pc",
+            "desactiva mi computadora",
+            "termina mi pc",
+            "detén mi computadora",
+            "shutdown mi pc",
+            "shutdown la computadora"
+          ]
+        },
+        {
+          "name": "StatusIntent",
+          "slots": [],
+          "samples": [
+            "cuál es el estado de mi computadora",
+            "está encendida mi pc",
+            "está prendida mi computadora",
+            "cómo está mi pc",
+            "estado de la computadora",
+            "estado del pc",
+            "está funcionando mi computadora",
+            "está activa mi pc",
+            "verifica mi computadora",
+            "revisa mi pc",
+            "checa mi computadora",
+            "consulta el estado de mi pc"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "PowerOnIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        },
+        {
+          "name": "PowerOffIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        },
+        {
+          "name": "StatusIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": []
+  }
+}
