@@ -1,0 +1,62 @@
+@echo off
+REM Guardar como: C:\alexa-pc\start_server.bat
+REM Script para iniciar el servidor de control PC
+
+title Servidor Control PC - Alexa
+
+echo.
+echo ================================
+echo   SERVIDOR CONTROL PC - ALEXA
+echo ================================
+echo.
+
+REM Verificar si Python está instalado
+python --version >nul 2>&1
+if errorlevel 1 (
+    echo ❌ ERROR: Python no está instalado o no está en PATH
+    echo.
+    echo 💡 Soluciones:
+    echo    1. Instalar Python desde: https://python.org
+    echo    2. Asegurarse de marcar "Add Python to PATH" durante instalación
+    echo    3. Reiniciar este script después de instalar
+    echo.
+    pause
+    exit /b 1
+)
+
+REM Verificar si el archivo pc_control.py existe
+if not exist "pc_control.py" (
+    echo ❌ ERROR: No se encuentra el archivo pc_control.py
+    echo.
+    echo 💡 Asegúrate de que ambos archivos estén en la misma carpeta:
+    echo    - start_server.bat
+    echo    - pc_control.py
+    echo.
+    echo 📂 Ubicación actual: %CD%
+    echo.
+    pause
+    exit /b 1
+)
+
+echo ✅ Python encontrado
+echo ✅ Archivo pc_control.py encontrado
+echo.
+echo 🚀 Iniciando servidor...
+echo.
+
+REM Cambiar al directorio del script
+cd /d "%~dp0"
+
+REM Verificar firewall (solo informativo)
+echo 🔥 IMPORTANTE: Si es la primera vez, Windows puede preguntar sobre el firewall
+echo    👉 Selecciona "Permitir acceso" para que Alexa pueda conectarse
+echo.
+
+REM Iniciar el servidor Python
+python pc_control.py
+
+REM Si llegamos aquí, el servidor se detuvo
+echo.
+echo 🛑 Servidor detenido
+echo.
+pause
